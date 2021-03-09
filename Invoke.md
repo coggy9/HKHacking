@@ -33,9 +33,9 @@ Known pages accessible through AP:
 
 https://192.168.43.1/getlogcat.asp - Sends a logcat
 
-https://192.168.43.1/goform/HandleCommand - Performs a command on the device.
+https://192.168.43.1/goform/HandleCommand?CMD= - Performs a command on the device.
 
-Known commands: CMD=RECONNECT_ACK
+Known commands: RECONNECT_ACK
 
 https://192.168.43.1/cgi-bin - Execute CGI scripts, if any exist on device. All common ones return a not found error.
 
