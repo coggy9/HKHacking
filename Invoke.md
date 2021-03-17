@@ -35,7 +35,9 @@ https://192.168.43.1/getlogcat.asp - Sends a logcat
 
 https://192.168.43.1/goform/HandleCommand?CMD= - Performs a command on the device.
 
-Known commands: RECONNECT_ACK
+Known commands: RECONNECT_ACK , STOP_SAC
+
+https://192.168.43.1/goform/HandleSACConfiguration - SSID and passsword info gets sent here with a simple POST with the following info: `SSID=ssidgoeshere&Passphrase=passwordgoeshere&Security=WPA-PSK`
 
 https://192.168.43.1/cgi-bin - Execute CGI scripts, if any exist on device. All common ones return a not found error.
 
@@ -73,6 +75,8 @@ Currently, there is only one exploit known to work with the Invoke, [CVE-2001-02
 
 [CVE-2002-1951](https://www.exploit-db.com/exploits/21707) has not produced any results yet.
 
+
+[CVE-2002-1603](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1603) appears to retrieve the code for ASP pages, but there is nothing useful in the currently known ASP files.
   
 
 ## GPL Code
