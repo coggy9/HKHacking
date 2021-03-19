@@ -82,3 +82,5 @@ Currently, there is only one exploit known to work with the Invoke, [CVE-2001-02
 ## GPL Code
 
 Harman-Kardon gave me a partial release of the GPL licensed source after a year of asking for it. It is available [here](https://archive.org/details/HK-Invoke-source-disclosure).
+
+The actual kernel code can be found [here](https://archive.org/details/invoke-kernel).
