@@ -1,4 +1,5 @@
 
+
   
 
 ## Invoke
@@ -64,6 +65,10 @@ PORT | STATE | SERVICE
 ## Normal Operation
 
 During normal operation, the Invoke does not respond to any of the URLs accessible when in setup mode.
+
+## Flashing Mode
+
+To enter "flashing mode", hold reset while plugging in the Invoke, and press the mic mute button 4 times within 5 seconds. Once the ring turns yellow, you can let go of the reset button.
 
   
 
