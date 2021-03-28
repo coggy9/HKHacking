@@ -20,7 +20,8 @@ The Invoke has two boards. A main amp board powering the speakers, and a daughte
 
 ## Software
 The Invoke runs a custom version of Linux, with some Android bits, such as adbd and logcat, included.
-A partial dump of the system can be found on the [releases](https://github.com/coggy9/HKHacking/releases) page.
+
+A full dump of the system can be obtained by running binwalk on "83_IMAGE" from the reflashing tools.
 
   
 
