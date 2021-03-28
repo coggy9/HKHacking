@@ -70,6 +70,12 @@ During normal operation, the Invoke does not respond to any of the URLs accessib
 
 To enter "flashing mode", hold reset while plugging in the Invoke, and press the mic mute button 4 times within 5 seconds. Once the ring turns yellow, you can let go of the reset button.
 
+
+## Reflash Image
+
+With Harman releasing [tools](https://github.com/coggy9/HKHacking/releases/tag/HarmanFlash "Harman.Kardon.INVOKE.Flashing.zip") to reflash the Invoke to some users, we can get a closer look at how the system works.
+
+The tools require the user to run commands in a telnet/serial terminal while the Invoke is in flashing mode. The terminal is a U-Boot terminal. 
   
 
 ## Exploits
@@ -81,7 +87,7 @@ Currently, there is only one exploit known to work with the Invoke, [CVE-2001-02
 [CVE-2002-1951](https://www.exploit-db.com/exploits/21707) has not produced any results yet.
 
 
-[CVE-2002-1603](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1603) appears to retrieve the code for ASP pages, but there is nothing useful in the currently known ASP files.
+[CVE-2002-1603](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1603) retrieves the code for ASP pages, but there is nothing useful in the ASP files.
   
 
 ## GPL Code
