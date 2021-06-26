@@ -81,11 +81,13 @@ The tools require the user to run commands in a telnet/serial terminal while the
 
 ## Exploits
 
+These exploits were tested on `Barracuda_libre-11.1842.0`, which is the last firmware released before Cortana support was removed.
+
 Currently, there is only one exploit known to work with the Invoke, [CVE-2001-0228](https://www.cvedetails.com/cve/CVE-2001-0228/) , which allows retrieval of some files from the filesystem while in initial setup mode. HTTPS must be used, and files past a certain size will timeout and fail to be sent.
 
   
 
-[CVE-2002-1951](https://www.exploit-db.com/exploits/21707) has not produced any results yet.
+[CVE-2002-1951](https://www.exploit-db.com/exploits/21707) does not work.
 
 
 [CVE-2002-1603](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1603) retrieves the code for ASP pages, but there is nothing useful in the ASP files.
