@@ -1,0 +1,2419 @@
+<!DOCTYPE html>
+<!-- saved from url=(0149)file:///D:/Users/Adam/Desktop/Notes/Exploitee.rs%20-%20Exploiteering%20-%20call-for-help%20[705316958513397760]%20(2021-04-14%20to%202021-04-16).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Exploitee.rs - call-for-help</title>
+    
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-300.woff);
+            font-weight: 300;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-400.woff);
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-500.woff);
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-600.woff);
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-700.woff);
+            font-weight: 700;
+        }
+
+        body {
+            background-color: #36393e;
+            color: #dcddde;
+            font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        a {
+            color: #00aff4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .markdown {
+            max-width: 100%;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+        }
+
+        .preserve-whitespace {
+            white-space: pre-wrap;
+        }
+
+        .spoiler-text {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .spoiler-text--hidden {
+            cursor: pointer;
+            background-color: #202225;
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .spoiler-text--hidden:hover {
+            background-color: rgba(32, 34, 37, 0.8);
+        }
+
+        .spoiler-text--hidden::selection {
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .quote {
+            display: flex;
+            margin: 0.05em 0;
+        }
+
+        .quote::before {
+            content: "";
+            margin-right: 0.5em;
+            border: 2px solid #4f545c;
+            border-radius: 3px;
+        }
+
+        .pre {
+            background-color: #2f3136;
+            font-family: "Consolas", "Courier New", Courier, monospace;
+        }
+
+        .pre--multiline {
+            margin-top: 0.25em;
+            padding: 0.5em;
+            border: 2px solid #282b30;
+            border-radius: 5px;
+            color: #b9bbbe;
+        }
+
+        .pre--multiline.hljs {
+            background-color: #2f3136;
+            color: #b9bbbe;
+        }
+
+        .pre--inline {
+            padding: 2px;
+            border-radius: 3px;
+            font-size: 0.85em;
+        }
+
+        .mention {
+            border-radius: 3px;
+            padding: 0 2px;
+            color: #dee0fc;
+            background-color: rgba(88, 101, 242, .3);
+            font-weight: 500;
+        }
+
+        .mention:hover {
+            background-color: #5865f2;
+            color: #ffffff
+        }
+
+        .timestamp {
+            border-radius: 3px;
+            padding: 0 2px;
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .emoji {
+            width: 1.325em;
+            height: 1.325em;
+            margin: 0 0.06em;
+            vertical-align: -0.4em;
+        }
+
+        .emoji--small {
+            width: 1em;
+            height: 1em;
+        }
+
+        .emoji--large {
+            width: 2.8em;
+            height: 2.8em;
+        }
+
+        .preamble {
+            display: grid;
+            margin: 0 0.3em 0.6em 0.3em;
+            max-width: 100%;
+            grid-template-columns: auto 1fr;
+        }
+
+        .preamble__guild-icon-container {
+            grid-column: 1;
+        }
+
+        .preamble__guild-icon {
+            max-width: 88px;
+            max-height: 88px;
+        }
+
+        .preamble__entries-container {
+            grid-column: 2;
+            margin-left: 0.6em;
+        }
+
+        .preamble__entry {
+            font-size: 1.4em;
+            color: #ffffff;
+        }
+
+        .preamble__entry--small {
+            font-size: 1em;
+        }
+
+        .chatlog {
+            max-width: 100%;
+        }
+
+        .chatlog__message-group {
+            display: grid;
+            margin: 0 0.6em;
+            padding: 0.9em 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            grid-template-columns: auto 1fr;
+        }
+
+        .chatlog__reference-symbol {
+            grid-column: 1;
+            margin: 8px 4px 4px 18px;
+            border-left: 2px solid #4f545c;
+            border-top: 2px solid #4f545c;
+            border-radius: 8px 0 0 0;
+        }
+
+        .chatlog__reference {
+            display: flex;
+            grid-column: 2;
+            margin-bottom: 0.25em;
+            font-size: 0.875em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            align-items: center;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-avatar {
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            margin-right: 0.25em;
+        }
+
+        .chatlog__reference-name {
+            margin-right: 0.3em;
+            font-weight: 600;
+        }
+
+        .chatlog__reference-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__reference-content a:hover {
+            text-decoration: none;
+        }
+
+        .chatlog__reference-link {
+            cursor: pointer;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-link * {
+            display: inline;
+            pointer-events: none;
+        }
+
+        .chatlog__reference-link:hover {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-link:hover *:not(.spoiler-text) {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-edited-timestamp {
+            margin-left: 0.25em;
+            font-size: 0.8em;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__author-avatar-container {
+            grid-column: 1;
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+        }
+
+        .chatlog__author-avatar {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .chatlog__messages {
+            grid-column: 2;
+            min-width: 50%;
+            direction: ltr;
+        }
+
+        .chatlog__author-name {
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .chatlog__timestamp {
+            margin-left: 0.3em;
+            font-size: 0.75em;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__message {
+            padding: 0.1em 0.3em;
+            margin: 0 -0.3em;
+            background-color: transparent;
+            transition: background-color 1s ease;
+        }
+
+        .chatlog__message--highlighted {
+            background-color: rgba(114, 137, 218, 0.2);
+        }
+
+        .chatlog__message--pinned {
+            background-color: rgba(249, 168, 37, 0.05);
+        }
+
+        .chatlog__content {
+            font-size: 0.95em;
+            word-wrap: break-word;
+        }
+
+        .chatlog__edited-timestamp {
+            margin-left: 0.15em;
+            font-size: 0.8em;
+        }
+
+        .chatlog__attachment {
+            display: inline-block;
+            position: relative;
+            margin-top: 0.3em;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden {
+            cursor: pointer;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatlog__attachment--hidden * {
+            pointer-events: none;
+        }
+
+        .chatlog__attachment-spoiler-caption {
+            display: none;
+            z-index: 999;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0.4em 0.8em;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 20px;
+            color: #dcddde;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-spoiler-caption {
+            display: block;
+        }
+
+        .chatlog__attachment--hidden:hover .chatlog__attachment-spoiler-caption {
+            color: #fff;
+        }
+
+        .chatlog__attachment-media {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-media {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic {
+            width: 100%;
+            max-width: 520px;
+            height: 40px;
+            padding: 10px;
+            background-color: #2f3136;
+            border: 1px solid #292b2f;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-generic {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic-icon {
+            float: left;
+            width: 30px;
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .chatlog__attachment-generic-size {
+            color: #72767d;
+            font-size: 12px;
+        }
+
+        .chatlog__attachment-generic-name {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__edited-timestamp {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__embed {
+            display: flex;
+            margin-top: 0.3em;
+            max-width: 520px;
+        }
+
+        .chatlog__embed-color-pill {
+            flex-shrink: 0;
+            width: 0.25em;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .chatlog__embed-color-pill--default {
+            background-color: #202225;
+        }
+
+        .chatlog__embed-content-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5em 0.6em;
+            background-color: rgba(46, 48, 54, 0.3);
+            border: 1px solid rgba(46, 48, 54, 0.6);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .chatlog__embed-content {
+            display: flex;
+            width: 100%;
+        }
+
+        .chatlog__embed-text {
+            flex: 1;
+        }
+
+        .chatlog__embed-author {
+            display: flex;
+            margin-bottom: 0.3em;
+            align-items: center;
+        }
+
+        .chatlog__embed-author-icon {
+            margin-right: 0.5em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .chatlog__embed-author-name {
+            font-size: 0.875em;
+            font-weight: 600;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: #ffffff
+        }
+
+        .chatlog__embed-author-name-link {
+            color: #ffffff;
+        }
+
+        .chatlog__embed-title {
+            margin-bottom: 0.2em;
+            font-size: 0.875em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-description {
+            font-weight: 500;
+            font-size: 0.85em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 0.5em;
+        }
+
+        .chatlog__embed-field {
+            flex: 0;
+            min-width: 100%;
+            max-width: 506px;
+            padding-top: 0.6em;
+            font-size: 0.875em;
+        }
+
+        .chatlog__embed-field--inline {
+            flex: 1;
+            flex-basis: auto;
+            min-width: 150px;
+        }
+
+        .chatlog__embed-field-name {
+            margin-bottom: 0.2em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-field-value {
+            font-weight: 500;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-thumbnail {
+            flex: 0;
+            margin-left: 1.2em;
+            max-width: 80px;
+            max-height: 80px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-image-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-image {
+            max-width: 500px;
+            max-height: 400px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-footer {
+            margin-top: 0.6em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-footer-icon {
+            margin-right: 0.2em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .chatlog__embed-footer-text {
+            vertical-align: middle;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .chatlog__embed-plainimage {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-spotify {
+            border: 0;
+        }
+
+        .chatlog__embed-youtube-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-youtube {
+            border: 0;
+            border-radius: 3px;
+        }
+
+        .chatlog__reactions {
+            display: flex;
+        }
+
+        .chatlog__reaction {
+            display: flex;
+            align-items: center;
+            margin: 0.35em 0.1em 0.1em 0;
+            padding: .125rem .375rem;
+            background-color: #2f3136;
+            border-radius: 8px;
+            border-color: transparent;
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        .chatlog__reaction:hover {
+            border-color: hsla(0,0%,100%,.2);
+            border-width: 1px;
+            border-style: solid;
+            background-color: transparent;
+        }
+
+        .chatlog__reaction-count {
+            min-width: 9px;
+            margin-left: 0.35em;
+            font-size: 0.875em;
+            color: #b9bbbe;
+        }
+
+        .chatlog__reaction:hover .chatlog__reaction-count {
+            color: #dcddde;
+        }
+
+        .chatlog__bot-tag {
+            position: relative;
+            top: -.1em;
+            margin-left: 0.3em;
+            padding: 0.05em 0.3em;
+            border-radius: 3px;
+            line-height: 1.3;
+            background-color: #5865F2;
+            color: #ffffff;
+            font-size: 0.625em;
+            font-weight: 500;
+        }
+
+        .postamble {
+            margin: 1.4em 0.3em 0.6em 0.3em;
+            padding: 1em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .postamble__entry {
+            color: #ffffff;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./CompileNotes_files/solarized-dark.min.css">
+    <script src="./CompileNotes_files/highlight.min.js.download"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler-text--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler-text--hidden');
+            }
+            if (element && element.classList.contains('chatlog__attachment--hidden')) {
+                event.preventDefault();
+                element.classList.remove('chatlog__attachment--hidden');
+            }
+        }
+    </script>
+
+    </head><body><svg style="display: none">
+        <symbol id="icon-attachment" viewBox="0 0 720 960">
+            <path fill="#f4f5fb" d="M50,935a25,25,0,0,1-25-25V50A25,25,0,0,1,50,25H519.6L695,201.32V910a25,25,0,0,1-25,25Z"></path>
+            <path fill="#7789c4" d="M509.21,50,670,211.63V910H50V50H509.21M530,0H50A50,50,0,0,0,0,50V910a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50h0V191Z"></path>
+            <path fill="#f4f5fb" d="M530,215a25,25,0,0,1-25-25V50a25,25,0,0,1,16.23-23.41L693.41,198.77A25,25,0,0,1,670,215Z"></path>
+            <path fill="#7789c4" d="M530,70.71,649.29,190H530V70.71M530,0a50,50,0,0,0-50,50V190a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50Z"></path>
+        </symbol>
+    </svg>
+
+
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="./CompileNotes_files/09791dbb662e446cff1fb7d89b5e898c-F7576.png" alt="Guild icon" loading="lazy">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">"Notes" on compiling for Invoke</div>
+        <div class="preamble__entry">Exploitee.rs - Exploiteering / call-for-help</div>
+
+            
+
+            <div class="preamble__entry preamble__entry--small">
+Between 14-Apr-21 12:00 AM and 16-Apr-21 12:00 AM            </div>
+    </div>
+</div>
+
+<div class="chatlog">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 06:55 PM</span>
+
+            <div class="chatlog__message " data-message-id="832403868138209340" id="message-832403868138209340" title="Message sent: 15-Apr-21 06:55 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Cross compiling for the Invoke was a lot easier than I thought. Feel like I'm missing something obvious and will fail when doing anything other than hello world. <img loading="lazy" class="emoji " alt="🤔" title="thinking" src="./CompileNotes_files/1f914.svg"></span>
+
+                        </div>
+                    </div>
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="./CompileNotes_files/unknown-9AC09.png">
+                                <img class="chatlog__attachment-media" src="./CompileNotes_files/unknown-9AC09.png" alt="Image attachment" title="Image: unknown.png (8.55 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:06 PM</span>
+
+            <div class="chatlog__message " data-message-id="832406657321533460" id="message-832406657321533460" title="Message sent: 15-Apr-21 07:06 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yep. Trying to use an old toolchain to build Python 3, and it doesn't have readelf.</span>
+
+                        </div>
+                    </div>
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="./CompileNotes_files/unknown-83BF1.png">
+                                <img class="chatlog__attachment-media" src="./CompileNotes_files/unknown-83BF1.png" alt="Image attachment" title="Image: unknown.png (88.93 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/21235604666131d7f4d05924e3eb423a-96559.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tchebb#9175" data-user-id="581922939918745608" style="">tchebb</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:15 PM</span>
+
+            <div class="chatlog__message " data-message-id="832408723770441769" id="message-832408723770441769" title="Message sent: 15-Apr-21 07:15 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">For readelf, you might just be able to grab one out of any ARMv7 toolchain and use that. It's pretty self contained and doesn't change much.</span>
+
+                                <span class="chatlog__edited-timestamp" title="15-Apr-21 07:16 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832409005342851093" id="message-832409005342851093" title="Message sent: 15-Apr-21 07:16 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">You can build your own toolchain using buildroot or crosstool-ng, or download a prebuilt one from ARM or Linaro or Bootlin</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="832409448692711464" id="message-832409448692711464" title="Message sent: 15-Apr-21 07:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">another stupid trick for pesky apps that don't like to be cross compiled is to use qemu-user-static  w/ binfmt in a "native" chroot</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/a59dcc9033bec239d0770c697ec7cf81-6C905.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Pog#0838" data-user-id="777058051836477451" style="">Pog</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:18 PM</span>
+
+            <div class="chatlog__message " data-message-id="832409574346719302" id="message-832409574346719302" title="Message sent: 15-Apr-21 07:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">^ if you use qemu-system to fully emulate arm or have a pi laying around it's really easy to compile static arm stuff</span>
+
+                                <span class="chatlog__edited-timestamp" title="15-Apr-21 07:18 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:18 PM</span>
+
+            <div class="chatlog__message " data-message-id="832409652385939456" id="message-832409652385939456" title="Message sent: 15-Apr-21 07:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Time to dust off my Pi 3 then</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832409667782049854" id="message-832409667782049854" title="Message sent: 15-Apr-21 07:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">and find a SD card</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:19 PM</span>
+
+            <div class="chatlog__message " data-message-id="832409736636792853" id="message-832409736636792853" title="Message sent: 15-Apr-21 07:19 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I usually don't bother with the kernel and just emulate userspace; it's faster</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/a59dcc9033bec239d0770c697ec7cf81-6C905.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Pog#0838" data-user-id="777058051836477451" style="">Pog</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:19 PM</span>
+
+            <div class="chatlog__message " data-message-id="832409913669976115" id="message-832409913669976115" title="Message sent: 15-Apr-21 07:19 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I only bothered with it since the userspace didn't let me use gdb since ptrace wasn't working</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/21235604666131d7f4d05924e3eb423a-96559.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tchebb#9175" data-user-id="581922939918745608" style="">tchebb</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:19 PM</span>
+
+            <div class="chatlog__message " data-message-id="832409916748070984" id="message-832409916748070984" title="Message sent: 15-Apr-21 07:19 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Honestly, Buildroot makes cross compiling so easy that I've never needed to bother with any emulation</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/a59dcc9033bec239d0770c697ec7cf81-6C905.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Pog#0838" data-user-id="777058051836477451" style="">Pog</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:19 PM</span>
+
+            <div class="chatlog__message " data-message-id="832409946221969438" id="message-832409946221969438" title="Message sent: 15-Apr-21 07:19 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">qemu-user probably works just as good for compiling</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:20 PM</span>
+
+            <div class="chatlog__message " data-message-id="832410122206314562" id="message-832410122206314562" title="Message sent: 15-Apr-21 07:20 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">tbh I love buildroot for quickly getting an environment up, it just usually doesn't have everything</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832410507599544341" id="message-832410507599544341" title="Message sent: 15-Apr-21 07:22 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">another handy thing to do is to compile busybox as a static binary, enable the ash shell and then click the config option for ash to automatically use busybox utils</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="emoji emoji--small" alt="👍" src="./CompileNotes_files/1f44d-B3F5F.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="832410622469472327" id="message-832410622469472327" title="Message sent: 15-Apr-21 07:22 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">then you have a busybox you can just drop on whatever device and have a pretty decent env</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+        <div class="chatlog__reference-symbol"></div>
+        <div class="chatlog__reference">
+                <img class="chatlog__reference-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+                <span class="chatlog__reference-name" title="retry#1723" style="color: rgb(153,45,34)">mbm</span>
+                <div class="chatlog__reference-content">
+                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;832410507599544341&#39;)">
+another handy thing to do is to compile busybox as a static binary, enable the ash shell and then click the config option for ash to automatically use busybox utils                    </span>
+
+                </div>
+        </div>
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/21235604666131d7f4d05924e3eb423a-96559.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tchebb#9175" data-user-id="581922939918745608" style="">tchebb</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:22 PM</span>
+
+            <div class="chatlog__message " data-message-id="832410632832679947" id="message-832410632832679947" title="Message sent: 15-Apr-21 07:22 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I feel like I saw some site with prebuilts of exactly this at one point</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832410659839803434" id="message-832410659839803434" title="Message sent: 15-Apr-21 07:22 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">forget where, though</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/a59dcc9033bec239d0770c697ec7cf81-6C905.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Pog#0838" data-user-id="777058051836477451" style="">Pog</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:23 PM</span>
+
+            <div class="chatlog__message " data-message-id="832410716321087528" id="message-832410716321087528" title="Message sent: 15-Apr-21 07:23 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://github.com/zoobab/busybox-static-for-android">https://github.com/zoobab/busybox-static-for-android</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill" style="background-color: rgba(30,35,39,255)"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://github.com/zoobab/busybox-static-for-android">
+                                                        <div class="markdown preserve-whitespace">zoobab/busybox-static-for-android</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">A static busybox for android. Contribute to zoobab/busybox-static-for-android development by creating an account on GitHub.</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="./CompileNotes_files/60872-BD882">
+                                                <img class="chatlog__embed-thumbnail" src="./CompileNotes_files/60872-BD882" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:23 PM</span>
+
+            <div class="chatlog__message " data-message-id="832410776581046282" id="message-832410776581046282" title="Message sent: 15-Apr-21 07:23 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">yeah, seems like it'd be a thing but I can never remember urls</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/21235604666131d7f4d05924e3eb423a-96559.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tchebb#9175" data-user-id="581922939918745608" style="">tchebb</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:27 PM</span>
+
+            <div class="chatlog__message " data-message-id="832411763801718794" id="message-832411763801718794" title="Message sent: 15-Apr-21 07:27 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Oh, it looks like there are official downloads statically linked with musl. That might be what I'm thinking of: <a href="https://busybox.net/downloads/binaries/1.31.0-defconfig-multiarch-musl/">https://busybox.net/downloads/binaries/1.31.0-defconfig-multiarch-musl/</a></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:27 PM</span>
+
+            <div class="chatlog__message " data-message-id="832411945310355457" id="message-832411945310355457" title="Message sent: 15-Apr-21 07:27 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">can't remember if the default config is set up with ash running busybox utils</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832412036683530250" id="message-832412036683530250" title="Message sent: 15-Apr-21 07:28 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">gets annoying typing <span class="pre pre--inline">busybox foo</span> all the time</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:37 PM</span>
+
+            <div class="chatlog__message " data-message-id="832414447645098004" id="message-832414447645098004" title="Message sent: 15-Apr-21 07:37 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Put the readelf binary from a standard arm toolchain into the poky toolchain, and still getting the same <span class="pre pre--inline">readelf for the host is required for cross builds</span> error. <img loading="lazy" class="emoji " alt="🤔" title="thinking" src="./CompileNotes_files/1f914.svg"></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:38 PM</span>
+
+            <div class="chatlog__message " data-message-id="832414701635108927" id="message-832414701635108927" title="Message sent: 15-Apr-21 07:38 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">host is your pc, target is the arm</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:39 PM</span>
+
+            <div class="chatlog__message " data-message-id="832414872000135178" id="message-832414872000135178" title="Message sent: 15-Apr-21 07:39 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">readelf is already installed on the pc</span>
+
+                        </div>
+                    </div>
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="./CompileNotes_files/unknown-EB2CE.png">
+                                <img class="chatlog__attachment-media" src="./CompileNotes_files/unknown-EB2CE.png" alt="Image attachment" title="Image: unknown.png (24.54 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:41 PM</span>
+
+            <div class="chatlog__message " data-message-id="832415293966909480" id="message-832415293966909480" title="Message sent: 15-Apr-21 07:41 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">it's also at this point where I get sick of <span class="pre pre--inline">./configure --host=whatever --target=whatever</span> and just go with the qemu solution to cross compiling</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832416185626001409" id="message-832416185626001409" title="Message sent: 15-Apr-21 07:44 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">oh my bad, it's <span class="pre pre--inline">--host</span> for the arm and <span class="pre pre--inline">--build</span> for the pc</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:46 PM</span>
+
+            <div class="chatlog__message " data-message-id="832416574706286633" id="message-832416574706286633" title="Message sent: 15-Apr-21 07:46 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">even with that, same error. <img loading="lazy" class="emoji " alt="facepalm" title="facepalm" src="./CompileNotes_files/722591100556148857.png"></span>
+
+                        </div>
+                    </div>
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="./CompileNotes_files/unknown-C2B06.png">
+                                <img class="chatlog__attachment-media" src="./CompileNotes_files/unknown-C2B06.png" alt="Image attachment" title="Image: unknown.png (27.05 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 07:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="832417418953228338" id="message-832417418953228338" title="Message sent: 15-Apr-21 07:49 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">few lines up it tells you it wants arm-poky-linux-readelf</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e69a3d84d3fa4ab032d9d6d21e2d2dba-D3681.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="th3lsh3ll#7689" data-user-id="574014134526672921" style="">th3lsh3ll</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 08:10 PM</span>
+
+            <div class="chatlog__message " data-message-id="832422792543731732" id="message-832422792543731732" title="Message sent: 15-Apr-21 08:10 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">how do i pick a target?
+should i randomly buy really cheap electronics from other countries?
+is there a way to fuzz IOT devices?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 08:15 PM</span>
+
+            <div class="chatlog__message " data-message-id="832423950583463937" id="message-832423950583463937" title="Message sent: 15-Apr-21 08:15 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">look to see what other people are hacking, maybe you can help out; you can buy cheap iot gear but some of it may just be esp32 and similar micro controllers, check for firmware downloads first</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="emoji emoji--small" alt="👍" src="./CompileNotes_files/1f44d-B3F5F.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 08:25 PM</span>
+
+            <div class="chatlog__message " data-message-id="832426348831178752" id="message-832426348831178752" title="Message sent: 15-Apr-21 08:25 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Built successfully, but it looks like the toolchain might be too new?
+Looks like libc on the Invoke is 2.23.</span>
+
+                                <span class="chatlog__edited-timestamp" title="15-Apr-21 08:33 PM">(edited)</span>
+                        </div>
+                    </div>
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="./CompileNotes_files/unknown-667C2.png">
+                                <img class="chatlog__attachment-media" src="./CompileNotes_files/unknown-667C2.png" alt="Image attachment" title="Image: unknown.png (18.78 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/513bf2ac29ad286bd8b73bf2bd90fd16-1931D.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Rena#9309" data-user-id="179080934371360770" style="">Rena</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 08:37 PM</span>
+
+            <div class="chatlog__message " data-message-id="832429530160562208" id="message-832429530160562208" title="Message sent: 15-Apr-21 08:37 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">buy cheap routers from thrift shops, open them, hack them</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="point_up_2">
+                                <img class="emoji emoji--small" alt="👆" src="./CompileNotes_files/1f446-D877E.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 08:39 PM</span>
+
+            <div class="chatlog__message " data-message-id="832429872446046248" id="message-832429872446046248" title="Message sent: 15-Apr-21 08:39 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">looks like the toolchain uses a different version of libc -- in this case glibc 2.25, but I wouldn't be surprised if the device is running uclibc</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 08:40 PM</span>
+
+            <div class="chatlog__message " data-message-id="832430211198877696" id="message-832430211198877696" title="Message sent: 15-Apr-21 08:40 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yep. version 2.5 of the toolchain is using libc 2.25, but 2.4 is using 2.26. <img loading="lazy" class="emoji " alt="🤔" title="thinking" src="./CompileNotes_files/1f914.svg"></span>
+
+                                <span class="chatlog__edited-timestamp" title="15-Apr-21 08:41 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 08:41 PM</span>
+
+            <div class="chatlog__message " data-message-id="832430534126206997" id="message-832430534126206997" title="Message sent: 15-Apr-21 08:41 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">quick and dirty trick is to copy lib from the toolchain to /tmp/lib on the device and then do <span class="pre pre--inline">LD_LIBRARY_PATH=/tmp/lib ./python</span></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+        <div class="chatlog__reference-symbol"></div>
+        <div class="chatlog__reference">
+                <img class="chatlog__reference-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+                <span class="chatlog__reference-name" title="retry#1723" style="color: rgb(153,45,34)">mbm</span>
+                <div class="chatlog__reference-content">
+                    <span class="chatlog__reference-link" onclick="scrollToMessage(event, &#39;832423950583463937&#39;)">
+look to see what other people are hacking, maybe you can help out; you can buy cheap iot gear but some of it may just be esp32 and similar micro controllers, check for firmware downloads first                    </span>
+
+                </div>
+        </div>
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e69a3d84d3fa4ab032d9d6d21e2d2dba-D3681.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="th3lsh3ll#7689" data-user-id="574014134526672921" style="">th3lsh3ll</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 08:46 PM</span>
+
+            <div class="chatlog__message " data-message-id="832431788050612334" id="message-832431788050612334" title="Message sent: 15-Apr-21 08:46 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">look in the discord? or forum or smth</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 08:46 PM</span>
+
+            <div class="chatlog__message " data-message-id="832431853327745074" id="message-832431853327745074" title="Message sent: 15-Apr-21 08:46 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">F. Tried with 2.4 and 2.5 toolchains</span>
+
+                        </div>
+                    </div>
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="./CompileNotes_files/unknown-CFE85.png">
+                                <img class="chatlog__attachment-media" src="./CompileNotes_files/unknown-CFE85.png" alt="Image attachment" title="Image: unknown.png (19.81 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 08:50 PM</span>
+
+            <div class="chatlog__message " data-message-id="832432641634467890" id="message-832432641634467890" title="Message sent: 15-Apr-21 08:50 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">try <span class="pre pre--inline">LD_LIBRARY_PATH=/lsync/lib /lsync/lib/ld.so ./python</span></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832432912485974047" id="message-832432912485974047" title="Message sent: 15-Apr-21 08:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">or whatever <span class="pre pre--inline">ld*.so*</span> file is in that directory</span>
+
+                                <span class="chatlog__edited-timestamp" title="15-Apr-21 08:51 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832432982148907019" id="message-832432982148907019" title="Message sent: 15-Apr-21 08:51 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">might be something like ld-linux.so</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 08:58 PM</span>
+
+            <div class="chatlog__message " data-message-id="832434686127112192" id="message-832434686127112192" title="Message sent: 15-Apr-21 08:58 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Going to try to find a version of the toolchain that has 2.23 libs like the Invoke system has</span>
+
+                        </div>
+                    </div>
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="./CompileNotes_files/unknown-056C8.png">
+                                <img class="chatlog__attachment-media" src="./CompileNotes_files/unknown-056C8.png" alt="Image attachment" title="Image: unknown.png (16.14 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 09:07 PM</span>
+
+            <div class="chatlog__message " data-message-id="832437080616730624" id="message-832437080616730624" title="Message sent: 15-Apr-21 09:07 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">hmm why is it still trying to use /lib? the LD_LIBRARY_PATH should have redirected it</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 09:15 PM</span>
+
+            <div class="chatlog__message " data-message-id="832438902232317992" id="message-832438902232317992" title="Message sent: 15-Apr-21 09:15 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">¯\_(ツ)_/¯</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832439000287412255" id="message-832439000287412255" title="Message sent: 15-Apr-21 09:15 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">The 2.1 toolchain uses 2.23 libs, and there is progress.</span>
+
+                        </div>
+                    </div>
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="./CompileNotes_files/unknown-10087.png">
+                                <img class="chatlog__attachment-media" src="./CompileNotes_files/unknown-10087.png" alt="Image attachment" title="Image: unknown.png (25.7 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832439077977456650" id="message-832439077977456650" title="Message sent: 15-Apr-21 09:15 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">just copied the python elf over, not sure if there was more I needed to copy</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 09:15 PM</span>
+
+            <div class="chatlog__message " data-message-id="832439152724279326" id="message-832439152724279326" title="Message sent: 15-Apr-21 09:15 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">yeah looks like you probably need the /usr/lib/python-* stuff to match</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832439324623896626" id="message-832439324623896626" title="Message sent: 15-Apr-21 09:16 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">you might want to install <span class="pre pre--inline">strace</span> since it's useful for pointing out missing files</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 09:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="832439552978714645" id="message-832439552978714645" title="Message sent: 15-Apr-21 09:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Invoke already has that installed. Nice.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/e003cf4e5dd10cea85e769826da94dd0-C9132.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="retry#1723" data-user-id="337019073458339851" style="color: rgb(153,45,34)">mbm</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 09:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="832439645085237329" id="message-832439645085237329" title="Message sent: 15-Apr-21 09:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="pre pre--inline">strace -e open ./python</span></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="832439845552914503" id="message-832439845552914503" title="Message sent: 15-Apr-21 09:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">actually -e stat might be more useful here</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="./CompileNotes_files/3773a6cabd55c1962c54021945a82651-23B5B.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Steven Magnet#4728" data-user-id="125878276123000833" style="">Steven Magnet</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-21 09:18 PM</span>
+
+            <div class="chatlog__message " data-message-id="832439645085237329" id="message-832439645085237329" title="Message sent: 15-Apr-21 09:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="pre pre--inline">bash-3.2# strace -e open ./python
+open("/etc/ld.so.preload", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/libc_stubs.so", O_RDONLY|O_CLOEXEC) = 4
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/libdl.so.2", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/libutil.so.1", O_RDONLY|O_CLOEXEC) = 4
+bash-3.2# strace -e open ./python
+open("/etc/ld.so.preload", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/libc_stubs.so", O_RDONLY|O_CLOEXEC) = 4
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/libdl.so.2", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/libutil.so.1", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/libm.so.6", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/tls/v7l/neon/vfp/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/tls/v7l/neon/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/tls/v7l/vfp/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/tls/v7l/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/tls/neon/vfp/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/tls/neon/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/tls/vfp/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/tls/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/v7l/neon/vfp/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/v7l/neon/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/v7l/vfp/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/v7l/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/neon/vfp/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/neon/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/vfp/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/liblog.so", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/librt.so.1", O_RDONLY|O_CLOEXEC) = 4
+open("/lib/libglibc_bridge.so", O_RDONLY|O_CLOEXEC) = 4
+open("/proc/self/cmdline", O_RDONLY)    = 4
+open("/dev/urandom", O_RDONLY|O_LARGEFILE|O_CLOEXEC) = 4
+open("/lsync/native/pyvenv.cfg", O_RDONLY|O_LARGEFILE) = -1 ENOENT (No such file or directory)
+open("/lsync/pyvenv.cfg", O_RDONLY|O_LARGEFILE) = -1 ENOENT (No such file or directory)
+Could not find platform independent libraries &lt;prefix&gt;
+Could not find platform dependent libraries &lt;exec_prefix&gt;
+Consider setting $PYTHONHOME to &lt;prefix&gt;[:&lt;exec_prefix&gt;]
+Fatal Python error: Py_Initialize: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0xb6fdf000 (most recent call first):
+--- SIGABRT {si_signo=SIGABRT, si_code=SI_TKILL, si_pid=2045, si_uid=0} ---
++++ killed by SIGABRT (core dumped) +++
+Aborted (core dumped)
+bash-3.2#</span></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 160 message(s)</div>
+</div>
+
+
+
+
+</body></html>
